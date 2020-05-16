@@ -37,6 +37,15 @@ public class RegistroActivity extends AppCompatActivity {
         AttachEventToSpinner();
     }
 
+
+    //Método para enviar valores.
+
+    public void EnviarValores(View view){
+
+    }
+
+
+
     private void AttachEventToSpinner(){
         tipoUsuario.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

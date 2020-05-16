@@ -16,14 +16,14 @@
    </ImageView>
 
     <EditText
-        android:id="@+id/EdtText1"
+        android:id="@+id/correo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </EditText>
 
     <EditText
-        android:id="@+id/EdtText2"
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
