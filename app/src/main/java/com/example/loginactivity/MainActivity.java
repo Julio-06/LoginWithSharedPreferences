@@ -47,15 +47,29 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences("Login", Context.MODE_PRIVATE);
 
         String userRegistrado = pref.getString("User","N/R");
-        int passRegistrado = pref.getInt("Pass",0);
+        String passRegistrado = pref.getString("Pass","N/R");
 
         String correoLogin = correo.getText().toString();
         String passwordLogin = password.getText().toString();
 
         if(userRegistrado.equals("N/R")){
             Toast.makeText(getApplicationContext(),"No existe un usuario registrado",Toast.LENGTH_LONG).show();
+
+            System.out.println(userRegistrado);
+            System.out.println(correoLogin);
         }else{//Logica para logear
-            if(userRegistrado.equals())
+            if(userRegistrado.equals(correoLogin) && passRegistrado.equals(passwordLogin)){
+
+
+
+
+                Toast.makeText(getApplicationContext(),"Encontrado",Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getApplicationContext(),PrincipalActivity.class);
+                startActivity(i);
+
+            }else{
+                Toast.makeText(getApplicationContext(),"No coinciden el usuario y la contraseña",Toast.LENGTH_LONG).show();
+            }
 
         }
 

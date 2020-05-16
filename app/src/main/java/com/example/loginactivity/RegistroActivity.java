@@ -2,6 +2,9 @@ package com.example.loginactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -40,7 +43,30 @@ public class RegistroActivity extends AppCompatActivity {
 
     //Método para enviar valores.
 
-    public void EnviarValores(View view){
+    public void Guardar(View view){
+        String nombre = correo.getText().toString();
+        String pass = contraseña.getText().toString();
+        String tipo = tipoUsuario.getSelectedItem().toString();
+
+        SharedPreferences prefs = getSharedPreferences("Login", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("User", nombre);
+        editor.putString("Pass", pass);
+        editor.putString("Tipo", tipo);
+        editor.commit();
+
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(i);
+
+
+
+
+
+
+
+
+
 
     }
 
