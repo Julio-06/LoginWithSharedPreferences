@@ -50,38 +50,11 @@ public class RegistroActivity extends AppCompatActivity {
         String pass = contraseña.getText().toString();
         String tipo = tipoUsuario.getSelectedItem().toString();
 
-<<<<<<< HEAD
-        SharedPreferences prefs = getSharedPreferences("Login", Context.MODE_PRIVATE);
-
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("User", nombre);
-        editor.putString("Pass", pass);
-        editor.putString("Tipo", tipo);
-
-
-
-
-
-
-
-
-
-        editor.commit();
-
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
-
-
-
-
-=======
->>>>>>> 67b9b668b90272f7dca9dfd5b8ead8a3fc98ff0a
-
         if(tipo=="Administrador"){
             try
             {
                 OutputStreamWriter fout = new OutputStreamWriter(
-                        openFileOutput("login_int.txt", Context.MODE_PRIVATE));
+                openFileOutput("login_int.txt", Context.MODE_PRIVATE));
                 fout.write(nombre);
                 fout.write(pass);
                 fout.write(tipo);
