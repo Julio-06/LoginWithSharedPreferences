@@ -2,7 +2,11 @@ package com.example.loginactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,6 +17,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.*;
 
 public class RegistroActivity extends AppCompatActivity {
 
@@ -36,6 +41,49 @@ public class RegistroActivity extends AppCompatActivity {
         tipoUsuario.setAdapter(adapter);
         AttachEventToSpinner();
     }
+
+
+    //Método para enviar valores.
+
+    public void Guardar(View view){
+        String nombre = correo.getText().toString();
+        String pass = contraseña.getText().toString();
+        String tipo = tipoUsuario.getSelectedItem().toString();
+
+
+        if(tipo=="Administrador"){
+            try
+            {
+                OutputStreamWriter fout = new OutputStreamWriter(
+                        openFileOutput("login_int.txt", Context.MODE_PRIVATE));
+                fout.write(nombre);
+                fout.write(pass);
+                fout.write(tipo);
+                fout.close();
+            }
+            catch (Exception ex)
+            {
+                Log.e("Ficheros", "Error al escribir fichero a memoria interna");
+            }
+
+
+        }
+        else {
+            SharedPreferences prefs = getSharedPreferences("Login", Context.MODE_PRIVATE);
+
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("User", nombre);
+            editor.putString("Pass", pass);
+            editor.putString("Tipo", tipo);
+            editor.commit();
+
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
+
+        }
+    }
+
+
 
     private void AttachEventToSpinner(){
         tipoUsuario.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
