@@ -4,30 +4,95 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:textStyle="bold"
+        android:textSize="100px"
+        android:textAlignment="center"
         android:text="Bienvenido"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </TextView>
 
     <LinearLayout
+        android:layout_margin="20px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
+
+            android:textSize="50px"
             android:text="Correo: "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
         </TextView>
         <TextView
-            android:text="Correo_respuesta"
+            android:textStyle="bold"
+            android:textSize="50px"
+            android:id="@+id/email"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
         </TextView>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="20px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textSize="50px"
+            android:text="Contraseña: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+            android:textStyle="bold"
+            android:textSize="50px"
+            android:id="@+id/pass"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="20px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textSize="50px"
+            android:text="Tipo de usuario: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+            android:textStyle="bold"
+            android:textSize="50px"
+            android:id="@+id/user"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+    </LinearLayout>
+
+    <Button
+        android:textStyle="bold"
+        android:text="Registrar"
+        android:onClick="Registro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </Button>
 
 
 

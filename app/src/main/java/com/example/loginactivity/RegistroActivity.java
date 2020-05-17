@@ -59,6 +59,9 @@ public class RegistroActivity extends AppCompatActivity {
                 fout.write(pass);
                 fout.write(tipo);
                 fout.close();
+                Toast.makeText(getApplicationContext(),"Se guardo en archivos",Toast.LENGTH_LONG).show();
+
+
             }
             catch (Exception ex)
             {
