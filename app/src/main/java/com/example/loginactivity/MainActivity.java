@@ -74,20 +74,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
-
-
-
-
-
-
-
-
-
-        Intent i = new Intent(getApplicationContext(), PrincipalActivity.class);
-        System.out.println("Hola soy del if deberia de entrar");
-        startActivity(i);
-
     }
 
     private void EscucharBotones(){
@@ -95,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,RegistroActivity.class));
+                startActivity(new Intent(MainActivity.this,PrincipalActivity.class));
             }
         });
 
