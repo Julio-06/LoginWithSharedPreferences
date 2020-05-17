@@ -54,6 +54,15 @@ public class RegistroActivity extends AppCompatActivity {
         editor.putString("User", nombre);
         editor.putString("Pass", pass);
         editor.putString("Tipo", tipo);
+
+
+
+
+
+
+
+
+
         editor.commit();
 
         Intent i = new Intent(getApplicationContext(), MainActivity.class);

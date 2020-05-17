@@ -52,11 +52,16 @@ public class MainActivity extends AppCompatActivity {
         String correoLogin = correo.getText().toString();
         String passwordLogin = password.getText().toString();
 
+
+
+        System.out.println(userRegistrado);
+        System.out.println(correoLogin);
+        System.out.println("holaaaaaaaaaaaaaavaloresssssssssssssssss");
+
         if(userRegistrado.equals("N/R")){
             Toast.makeText(getApplicationContext(),"No existe un usuario registrado",Toast.LENGTH_LONG).show();
 
-            System.out.println(userRegistrado);
-            System.out.println(correoLogin);
+
         }else{//Logica para logear
             if(userRegistrado.equals(correoLogin) && passRegistrado.equals(passwordLogin)){
 
@@ -75,18 +80,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-        Intent i = new Intent(getApplicationContext(), PrincipalActivity.class);
-        System.out.println("Hola soy del if deberia de entrar");
-        startActivity(i);
 
     }
 
