@@ -50,16 +50,18 @@ public class RegistroActivity extends AppCompatActivity {
         String pass = contraseña.getText().toString();
         String tipo = tipoUsuario.getSelectedItem().toString();
 
-
         if(tipo=="Administrador"){
             try
             {
                 OutputStreamWriter fout = new OutputStreamWriter(
-                        openFileOutput("login_int.txt", Context.MODE_PRIVATE));
+                openFileOutput("login_int.txt", Context.MODE_PRIVATE));
                 fout.write(nombre);
                 fout.write(pass);
                 fout.write(tipo);
                 fout.close();
+                Toast.makeText(getApplicationContext(),"Se guardo en archivos",Toast.LENGTH_LONG).show();
+
+
             }
             catch (Exception ex)
             {
